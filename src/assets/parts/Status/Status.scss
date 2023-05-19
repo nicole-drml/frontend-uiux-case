@@ -1,0 +1,205 @@
+#status-container {
+  position: fixed;
+  width: 375px;
+  height: 44px;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  z-index: 999;
+
+  span {
+    position: absolute;
+
+    width: 40px;
+    height: 42px;
+    left: 28.5px;
+    top: calc(50% - 42px / 2 + 12px);
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  #status-symbols-container {
+    display: flex;
+    align-items: end;
+    position: absolute;
+    right: 0px;
+    top: calc(50% - 13px / 2);
+    padding: 0 10px;
+
+    .icon {
+      font-size: 1.2em;
+    }
+    #wifi-icon {
+      font-size: 1.1em;
+      margin-right: 5px;
+    }
+
+    // .settings-icon {
+    //   width: 100%;
+    //   height: 100%;
+    // }
+
+    // #settings-data {
+    //   background-image: url(../../images/settings-data.png);
+    //   background-color: rgba(0, 0, 255, 0.09);
+    // }
+    // #settings-wifi {
+    //   background-image: url(../../images/settings-wifi.png);
+    // }
+    // #settings-battery {
+    //   background-image: url(../../images/settings-battery.png);
+    // }
+
+    // #cellular {
+    //   display: flex;
+    //   justify-content: start;
+    //   // background-color: beige;
+    //   width: 20px;
+    //   height: 13px;
+
+    //   .cellular-bars {
+    //     position: absolute;
+    //     bottom: 10%;
+    //     background-color: rgba(0, 0, 0, 1);
+    //     border-radius: 1.2px;
+    //   }
+    //   :nth-child(1) {
+    //     left: 0%;
+    //     right: 95.59%;
+    //     top: 59.23%;
+    //   }
+    //   :nth-child(2) {
+    //     left: 7.06%;
+    //     right: 88.53%;
+    //     top: 43.85%;
+    //   }
+    //   :nth-child(3) {
+    //     left: 13.82%;
+    //     right: 81.76%;
+    //     top: 26.15%;
+    //     // width: 3px;
+    //     // height: 8.3px;
+    //   }
+    //   :nth-child(4) {
+    //     left: 20.74%;
+    //     right: 74.85%;
+    //     top: 7.69%;
+    //     // width: 3px;
+    //     // height: 10.7px;
+    //   }
+    // }
+
+    // #wifi {
+    //   display: flex;
+    //   flex-direction: column;
+    //   width: 20px;
+    //   height: 13px;
+    //   // background-color: green;
+    //   // position: relative;
+    //   .wifi-bars {
+    //     background-color: rgba(0, 0, 0, 1);
+    //   }
+    //   :nth-child(1)::before {
+    //     position: absolute;
+    //     content: "";
+    //     width: 1px;
+    //     height: 3.4px;
+
+    //     left: 40.39%;
+    //     right: 52.75%;
+    //     top: 65.04%;
+    //     bottom: 8.79%;
+    //     border-radius: 50%;
+
+    //     border-left: 3px solid transparent;
+    //     border-right: 3px solid transparent;
+    //     border-top: 3px solid black;
+    //   }
+    //   :nth-child(2)::before {
+    //     position: absolute;
+    //     content: "";
+    //     width: 9px;
+    //     height: 13.66px;
+
+    //     left: 34.07%;
+    //     right: 48.8%;
+    //     top: 35.58%;
+    //     bottom: 36.23%;
+    //     border: 3px solid transparent;
+    //     border-radius: 70% 70% 0 0;
+    //     border-top-color: black;
+    //   }
+
+    //   :nth-child(3)::before {
+    //     position: absolute;
+    //     content: "";
+    //     width: 15.4px;
+    //     height: 20px;
+
+    //     left: 29.5%;
+    //     right: 44.85%;
+    //     top: 6.15%;
+    //     bottom: 57.05%;
+    //     border: 3px solid transparent;
+    //     border-radius: 70% 70% 0 0;
+    //     border-top-color: black;
+    //   }
+    // }
+
+    // #battery {
+    //   width: 24.5px;
+    //   height: 11.5px;
+    //   // background-color: aquamarine;
+    //   #battery-border {
+    //     position: absolute;
+    //     width: 22.5px;
+    //     height: 9.5px;
+    //     right: 0px;
+    //     top: calc(50% - 11.5px / 2);
+
+    //     /* Neutral/100 */
+    //     // background: #181818;
+    //     border: 1.3px solid #181818;
+
+    //     mix-blend-mode: normal;
+    //     opacity: 0.4;
+    //   }
+    //   #battery-fill {
+    //     position: absolute;
+    //     width: 18px;
+    //     height: 7.67px;
+    //     right: 4.5px;
+    //     top: calc(50% - 7.67px / 2 + 0px);
+
+    //     /* Neutral/100 */
+    //     background: #181818;
+    //     border-radius: 1.6px;
+    //     z-index: 1;
+    //   }
+      // #battery-border {
+      //   position: absolute;
+      //   width: 22px;
+      //   height: 11.5px;
+      //   right: 2.5px;
+      //   top: calc(50% - 11.5px / 2);
+
+      //   background: rgba(0, 0, 0, 0.36);
+      //   border-radius: 1.6px;
+      // }
+
+    //   #battery-positive-charge {
+    //     position: absolute;
+    //     width: 1.5px;
+    //     height: 4px;
+    //     right: 0px;
+    //     top: calc(50% - 4px / 2 - 0.06px);
+
+    //     background: rgba(0, 0, 0, 0.36);
+    //   }
+    // }
+  }
+}

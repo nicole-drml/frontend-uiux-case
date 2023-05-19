@@ -1,0 +1,21 @@
+#login-page-container {
+  #login-form-container {
+    height: 40%;
+    .form-component-container {
+      height: 100%;
+
+      .input-with-info-container {
+        height: 15%;
+
+      }
+
+      #forgot-password-link {
+        margin-top: 25px;
+    }
+
+    button.main {
+        margin-top: 0px;
+    }
+    }
+  }
+}

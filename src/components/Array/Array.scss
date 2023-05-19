@@ -1,0 +1,22 @@
+.array-pages-container {
+    .array-title-and-button {
+        display: flex;
+        align-items: center;
+        margin-top: 5%;
+        // background-color: antiquewhite;
+        padding: 5%;
+
+        svg {
+            font-size: 1.5em;
+            opacity: .7;
+        }
+
+    }
+    .array-page-title {
+        font-weight: 600;
+        text-align: center;
+        font-size: 1.05em;
+        width: 100vw;
+        text-align: center;
+    }
+}

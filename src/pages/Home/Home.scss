@@ -1,0 +1,128 @@
+#home-page-container {
+  display: grid;
+  overflow-x: hidden;
+
+  #status-container {
+    background-color: #ffffff;
+  }
+  ul#filter-ul {
+    list-style-type: none;
+    display: flex;
+    width: 95vw;
+    height: 65px;
+    padding: 10px 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0%;
+    margin-bottom: 0%;
+
+    li {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      .icon-image-container {
+        width: 35px;
+      }
+      img {
+        width: 30px;
+        border-radius: 12px;
+        display: block;
+        padding: 0.5em;
+        background-color: rgba(245, 245, 245, 1);
+      }
+      span {
+        font-size: 0.85em;
+        color: rgba(144, 144, 144, 1);
+        margin-left: 12%;
+      }
+    }
+  }
+  #products-container {
+    width: 100vw;
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      list-style-type: none;
+      margin-top: 3%;
+      padding: 0% 5%;
+
+      li {
+        margin-bottom: 5%;
+
+        .product-image-container {
+          position: relative;
+          display: flex;
+          overflow: hidden;
+          cursor: pointer;
+
+          .product-main-image {
+            height: 210px;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+          }
+          .shopping-bag-icon {
+            position: absolute;
+            bottom: 7.5%;
+            right: 5.5%;
+            background-color: rgba(224, 224, 224, 1);
+            padding: 2px;
+            border-radius: 4px;
+          }
+        }
+        span {
+          font-size: 0.9em;
+          padding-left: 1px;
+        }
+        .product-name {
+          color: rgba(144, 144, 144, 1);
+        }
+        .product-price {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  #home-top-options-container {
+    margin-top: 8%;
+
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    color: rgba(144, 144, 144, 1);
+
+    #home-title-p {
+      flex-grow: 1;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      font-size: 0.85em;
+      span {
+        font-size: 1.3em;
+        font-weight: 700;
+      }
+    }
+
+    .home-top-icons {
+      font-size: 1.55em;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    #home-cart-icon {
+      color: rgba(144, 144, 144, 1);
+    }
+  }
+
+  .indicator {
+    position: fixed;
+  }
+}
