@@ -20,7 +20,7 @@ const Boarding = () => {
         <Link 
         to="/login"
         >
-        <Button text="Get Started" />
+        <Button buttonText="Get Started" />
         </Link>
         <div className="indicator"></div>
 

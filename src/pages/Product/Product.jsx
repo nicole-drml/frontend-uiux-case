@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useReducer, useState } from "react";
 
-import { AiOutlineStar } from "react-icons/ai";
+// import { AiOutlineStar } from "react-icons/ai";
 import { AiFillStar } from "react-icons/ai";
 import Navbar from "../../assets/parts/Navbar/Navbar";
 
@@ -9,7 +9,9 @@ import "./Product.scss";
 import Status from "../../assets/parts/Status";
 
 import { IoIosArrowBack } from "react-icons/io";
-import { BiBookmark } from "react-icons/bi";
+import { BsBookmark } from "react-icons/bs";
+import { CgMathPlus } from "react-icons/cg";
+import { CgMathMinus } from "react-icons/cg";
 
 const Product = ({
   PRODUCTS,
@@ -83,9 +85,9 @@ const Product = ({
     setDisableDecBtn(true);
   }, []);
 
-  const createFavorite = () => {
-    product.favorited = true;
-    setFavorite(true);
+  const toggleFavorite = () => {
+    product.favorited = !product.favorited;
+    setFavorite(!favorite);
 
     console.log("favorite stat", favoriteStatus);
     console.log("favoriteyproyyy", product);
@@ -125,7 +127,7 @@ const Product = ({
               }`}
               onClick={increment}
             >
-              +
+            <CgMathPlus />
             </button>
             <span>{state.count}</span>
             <button
@@ -134,16 +136,12 @@ const Product = ({
               }`}
               onClick={decrement}
             >
-              -
+              < CgMathMinus/>
             </button>
           </div>
         </div>
         <div id="ratings-and-favorite">
-          {favorite ? (
-            <AiFillStar onClick={deleteFavorite} className="star-icon" />
-          ) : (
-            <AiOutlineStar onClick={createFavorite} className="star-icon" />
-          )}
+            <AiFillStar className="star-icon" />
           <span id="rating-average-span">{product.rating}</span>
           <span id="review-count-span">({product.review_count} reviews)</span>
         </div>
@@ -152,7 +150,9 @@ const Product = ({
 
         <div id="product-bottom-options">
           {/* <VscBookmark /> */}
-          <BiBookmark id="product-favorite-button" />
+          <BsBookmark id="product-favorite-button" className={`${favorite ? "favorite" : "not-favorite"}`}
+          onClick={toggleFavorite}
+          />
           <button id="product-add-to-cart-button" onClick={addtoCart}>
             Add to cart
           </button>
