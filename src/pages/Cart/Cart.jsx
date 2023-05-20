@@ -162,8 +162,8 @@ const Cart = (PRODUCTS) => {
           <MdArrowForwardIos onClick={enterPromoCode} />
         </div>
       )}
-      {codeInvalid && <h1>invalid code</h1>}
       <div className="cart-bottom-logic-container">
+      {codeInvalid && <h1 id="invalid-code-h1" >invalid code</h1>}
         <div className="total-container">
           <span className="total-label-span">Total</span>
           <span className="total-span">$ {cartTotal.toFixed(2)}</span>

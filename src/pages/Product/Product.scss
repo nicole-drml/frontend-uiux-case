@@ -56,15 +56,32 @@
 
       #product-price-span {
         font-weight: 600;
-        font-size: em;
+        font-size: 1.5em;
       }
       #quantity-add-to-cart-container {
         display: flex;
-        gap: 40%;
+        gap: 100%;
         margin-left: auto;
         justify-content: center;
         align-items: center;
+        // display: grid;
+        // grid-template-columns: repeat(3, 1fr);
+        // // place-content: center;
+        // background-color: yellow;
+        width: 15%;
+        position: relative;
 
+      #span-counter-container {
+        // background-color: blue;
+        width: 100%;
+        position: absolute;
+        // display: flex;
+      }
+        span {
+          // background-color: red;
+          text-align: center;
+          display: block;
+        }
         button {
           display: grid;
           place-content: center;

@@ -129,7 +129,9 @@ const Product = ({
             >
             <CgMathPlus />
             </button>
-            <span>{state.count}</span>
+            <div id="span-counter-container">
+              <span>{state.count.toString().padStart(2, '0')}</span>
+            </div>
             <button
               className={`decrease-quantity-btn ${
                 disableDecBtn ? "disabled-btn" : ""
