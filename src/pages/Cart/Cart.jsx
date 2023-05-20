@@ -172,6 +172,8 @@ const Cart = (PRODUCTS) => {
           <span>Checkout</span>{" "}
         </button>
       </div>
+      <div className="indicator"></div>
+
     </div>
   );
 };

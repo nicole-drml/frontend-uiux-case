@@ -1,14 +1,30 @@
+@import "../../assets/scss/styles";
+
 #cart-page-container {
+  // position: relative;
   .cart-bottom-logic-container {
     position: absolute;
     bottom: 0;
-    background-color: #ffffff;
+    background-color: $white;
 
     width: 100vw;
     height: 28%;
     display: flex;
     flex-direction: column;
     justify-content: end;
+
+    #invalid-code-h1 {
+      color: $light-red;
+      font-size: .85em;
+      // background-color: red;
+      height: 10%;
+      width: 100%;
+      top: 50px;
+      // margin-top: ;
+      // margin-top: 100px;
+      position: absolute;
+      text-align: center;
+    }
     .total-container {
       font-weight: 700;
       font-size: 1.3em;
@@ -16,10 +32,10 @@
       justify-content: space-between;
       padding: 15px;
       .total-label-span {
-        color: #808080;
+        color: $light-grey;
       }
       .total-span {
-        color: #303030;
+        color: $black;
       }
     }
     button {
@@ -27,7 +43,7 @@
       width: 90%;
       box-shadow: 0px 8px 30px rgba(48, 48, 48, 0.3);
 
-      background-color: #242424;
+      background-color: $black;
       border: 0;
       border-radius: 8px;
       padding: 4%;
@@ -36,7 +52,7 @@
       margin-top: 10px;
 
       span {
-        color: #ffffff;
+        color: $white;
         font-size: 1.35em;
         line-height: 25px;
         text-align: center;
@@ -58,7 +74,7 @@
   z-index: 1;
   input {
     border: none;
-    background-color: #ffffff;
+    background-color: $white;
     box-shadow: 0px 2px 20px rgba(138, 149, 158, 0.12);
     border-radius: 10px;
     padding: 3%;
@@ -71,10 +87,10 @@
     position: absolute;
     right: 10%;
     padding: 3%;
-    font-size: 1.3em;
-    background: #242424;
+    font-size: 1.1em;
+    background: $black;
     border-radius: 10px;
-    color: #ffffff;
+    color: $white;
   }
   input:focus {
     outline: none;

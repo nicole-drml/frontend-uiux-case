@@ -37,6 +37,7 @@ const Favorite = (PRODUCTS) => {
         })}
       </ul>
       <Navbar />
+      <div className="indicator"></div>
     </div>
   );
 };
