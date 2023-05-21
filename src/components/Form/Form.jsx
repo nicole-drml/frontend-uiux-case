@@ -34,20 +34,27 @@ const Form = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { username, email, password } = formData;
+    const { username, email, password, confirmPassword } = formData;
 
     let isValid = true;
     const newErrors = {
       username: "",
       email: "",
       password: "",
-      confirmpassword: "",
+      confirmPassword: "",
     };
 
     if (props.mode == "signup") {
       if (!username.trim()) {
         isValid = false;
-        newErrors.name = "Name is required";
+        newErrors.username = "Name is required";
+      }
+      if (!confirmPassword.trim()) {
+        isValid = false;
+        newErrors.confirmPassword = "Password confirmation is required";
+      } else if (confirmPassword != password) {
+        isValid = false;
+        newErrors.confirmPassword = "Passwords do not match";
       }
     }
 
@@ -77,28 +84,25 @@ const Form = (props) => {
     setErrors(newErrors);
 
     if (isValid) {
-      if (props.mode == "login") {
         setRedirect(true);
-      }
     }
 
     // if (redirect) {
     //   navigate("/home");
     // }
-  
+
     console.log("newErrors", newErrors);
   };
 
   useEffect(() => {
     if (redirect) {
       navigate("/home");
-
     }
-  }, [redirect])
+  }, [redirect]);
 
   return (
     <div className="form-component-container">
-       {/* {redirect && (
+      {/* {redirect && (
         <Redirect to="/main-page" />
       ) } */}
       {/* {errors && <span>{errors}</span>} */}
@@ -106,13 +110,21 @@ const Form = (props) => {
         <div className="input-with-info-container">
           <div className="input-with-label">
             <label className="input-label">Name</label>
-            <input type="name" id="name-input" list="names" />
-            <datalist id="names">
+            <input
+              type="name"
+              id="name-input"
+              // list="names"
+
+              name="username"
+              value={FormData.username}
+              onChange={handleChange}
+            />
+            {/* <datalist id="names">
               <option value="Nicole"></option>
               <option value="Nikki"></option>
               <option value="Nikkikins"></option>
               <option value="Niks"></option>
-            </datalist>
+            </datalist> */}
           </div>
           {/* <div className="input-icon"></div> */}
         </div>
@@ -148,7 +160,13 @@ const Form = (props) => {
           <div className="input-with-label">
             <label className="input-label">Password Confirmation</label>
 
-            <input type="password" id="password-confirmation-input" />
+            <input
+              type="password"
+              id="password-confirmation-input"
+              name="confirmPassword"
+              value={FormData.confirmPassword}
+              onChange={handleChange}
+            />
           </div>
         </div>
       )}
