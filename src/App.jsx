@@ -147,14 +147,11 @@ const App = () => {
 
   const [favoritesArr, setFavoritesArr] = useState([]);
   const [cartArr, setCartArr] = useState([]);
-  const [inputValue, setInputValue] = useState("");
 
   const [favoriteStatus, setFavoriteStatus] = useState({ favorited: false });
   const [inCartStatus, setInCartStatus] = useState({ carted: false });
 
   PRODUCTS.forEach((product) => {
-    // const favoriteStatus = {'favorited': false};
-
     Object.assign(product, favoriteStatus);
     Object.assign(product, inCartStatus);
   });
@@ -174,8 +171,6 @@ const App = () => {
               filterIconsArr={filterIconsArr}
               cartArr={cartArr}
               setCartArr={setCartArr}
-              // inCartStatus={inCartStatus}
-              // setInCartStatus={setInCartStatus}
             />
           }
         ></Route>

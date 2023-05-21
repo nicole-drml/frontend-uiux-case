@@ -90,10 +90,6 @@ const Product = ({
     setFavorite(!favorite);
   };
 
-  const deleteFavorite = () => {
-    product.favorited = false;
-    setFavorite(false);
-  };
   const addtoCart = () => {
     product.carted = true;
   };

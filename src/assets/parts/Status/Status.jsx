@@ -20,7 +20,7 @@ const Status = () => {
     }
     updateMilitaryTime();
 
-    const interval = setInterval(updateMilitaryTime, 60000);
+    const interval = setInterval(updateMilitaryTime, 1000);
     
     return() => {
       clearInterval(interval)
