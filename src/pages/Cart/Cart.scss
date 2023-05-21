@@ -3,11 +3,12 @@
 #cart-page-container {
   // position: relative;
   .cart-bottom-logic-container {
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    // background-color: yellow;
     background-color: $white;
-
     width: 100vw;
+    // height: 25%;
     height: 28%;
     display: flex;
     flex-direction: column;
@@ -19,11 +20,13 @@
       // background-color: red;
       height: 10%;
       width: 100%;
-      top: 50px;
+      // top: 50px;
       // margin-top: ;
       // margin-top: 100px;
       position: absolute;
+      top: 20%;
       text-align: center;
+      // background-color: blue;
     }
     .total-container {
       font-weight: 700;
@@ -60,18 +63,26 @@
         font-weight: 400;
       }
     }
+
+    .discounted-div {
+      h3 {
+        text-align: center;
+        color: $light-grey;
+      }
+    }
   }
 }
 
 #not-yet-discounted-div {
   display: flex;
   align-items: center;
-
   background-color: rgb(135, 116, 91);
-  position: absolute;
+  // position: sticky;
   width: 100%;
-  bottom: 24%;
-  z-index: 1;
+  margin-bottom: 10%;
+  // bottom: 85%;
+  z-index: 10;
+
   input {
     border: none;
     background-color: $white;

@@ -71,6 +71,7 @@ const Cart = (props) => {
 
   const handleInputChange = (event) => {
     setPromoCode(event.target.value);
+    setcodeInvalid(false)
   };
 
   //   let discountPercentage = 0;
@@ -147,6 +148,8 @@ const Cart = (props) => {
           );
         })}
       </ul>
+
+      <div className="cart-bottom-logic-container">
       {discounted ? (
         <div className="discounted-div">
           <h3>Congrats! You saved {discountPercentage}%</h3>
@@ -162,7 +165,6 @@ const Cart = (props) => {
           <MdArrowForwardIos onClick={enterPromoCode} />
         </div>
       )}
-      <div className="cart-bottom-logic-container">
       {codeInvalid && <h1 id="invalid-code-h1" >invalid code</h1>}
         <div className="total-container">
           <span className="total-label-span">Total</span>
