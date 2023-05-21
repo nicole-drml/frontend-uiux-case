@@ -1,3 +1,3 @@
-FrontEnd UI-UX Dev Case
+**FrontEnd UI-UX Dev Case**
 
 375x812 screen resolution
