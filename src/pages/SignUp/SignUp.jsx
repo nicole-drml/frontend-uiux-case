@@ -20,6 +20,7 @@ const SignUp = () => {
         formType="Sign up"
         signup={true} 
         login={false}
+        mode='signup'
         />
       </div>
 

@@ -14,7 +14,8 @@ const LogIn = () => {
       </div>
       <h3 id="login-h3" ><span>Hello!</span><br/> WELCOME BACK</h3>
       <div id="login-form-container" className="forms-container">
-        <Form formType="Log In" signup={false} login={true} />
+        <Form formType="Log In"
+        mode='login' />
       </div>
       <div className="indicator"></div>
 

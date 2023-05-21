@@ -3,13 +3,15 @@ button.main {
 
   background-color: #242424;
   border: 0;
-  span {
-    color: #ffffff;
-    font-size: 1.35em;
-    line-height: 25px;
-    text-align: center;
-    padding: 16px 32px;
-    font-weight: 400;
-    font-family: 'Poppins', sans-serif;
-  }
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+
+  // span {
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 25px;
+  text-align: center;
+  padding: 16px 32px;
+  font-weight: 400;
+  // }
 }

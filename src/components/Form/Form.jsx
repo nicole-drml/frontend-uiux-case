@@ -1,19 +1,108 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate, Redirect } from "react-router-dom";
 import Button from "../Button";
 import "./Form.scss";
 
 const Form = (props) => {
-  console.log("props.login", props.login);
-
+  const navigate = useNavigate();
+  const [redirect, setRedirect] = useState(false);
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const [errors, setErrors] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
   const handleForgotPassword = () => {
     // Open the forgot password popup window
-    window.open('https://www.google.com', '_blank');
+    window.open("https://www.google.com", "_blank");
   };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { username, email, password } = formData;
+
+    let isValid = true;
+    const newErrors = {
+      username: "",
+      email: "",
+      password: "",
+      confirmpassword: "",
+    };
+
+    if (props.mode == "signup") {
+      if (!username.trim()) {
+        isValid = false;
+        newErrors.name = "Name is required";
+      }
+    }
+
+    if (!email.trim()) {
+      isValid = false;
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      isValid = false;
+      newErrors.email = "Invalid email format";
+    }
+
+    if (!password.trim()) {
+      isValid = false;
+      newErrors.password = "Password is required";
+    } else if (
+      // props.mode === 'signup' &&
+      password.length < 8 ||
+      !/[A-Z]/.test(password) ||
+      !/\d/.test(password) ||
+      !/[!@#$%^&*()]/.test(password) ||
+      /\*/.test(password)
+    ) {
+      isValid = false;
+      newErrors.password = "Invalid password";
+    }
+
+    setErrors(newErrors);
+
+    if (isValid) {
+      if (props.mode == "login") {
+        setRedirect(true);
+      }
+    }
+
+    // if (redirect) {
+    //   navigate("/home");
+    // }
+  
+    console.log("newErrors", newErrors);
+  };
+
+  useEffect(() => {
+    if (redirect) {
+      navigate("/home");
+
+    }
+  }, [redirect])
 
   return (
     <div className="form-component-container">
-      {props.signup && (
+       {/* {redirect && (
+        <Redirect to="/main-page" />
+      ) } */}
+      {/* {errors && <span>{errors}</span>} */}
+      {props.mode == "signup" && (
         <div className="input-with-info-container">
           <div className="input-with-label">
             <label className="input-label">Name</label>
@@ -31,17 +120,30 @@ const Form = (props) => {
       <div className="input-with-info-container">
         <div className="input-with-label">
           <label className="input-label">Email</label>
-          <input type="email" id="email-input" />
+          <input
+            type="email"
+            id="email-input"
+            name="email"
+            value={FormData.email}
+            onChange={handleChange}
+          />
         </div>
+        {/* {errors.email && <p>{errors.email}</p> } */}
       </div>
 
       <div className="input-with-info-container">
         <div className="input-with-label">
           <label className="input-label">Password</label>
-          <input type="password" id="password-input" />
+          <input
+            type="password"
+            id="password-input"
+            name="password"
+            value={FormData.password}
+            onChange={handleChange}
+          />
         </div>
       </div>
-      {props.signup && (
+      {props.mode == "signup" && (
         <div className="input-with-info-container">
           <div className="input-with-label">
             <label className="input-label">Password Confirmation</label>
@@ -50,33 +152,17 @@ const Form = (props) => {
           </div>
         </div>
       )}
-         {props.login && 
-      // <Link
-      // to="/forgot-password"
-      // id="forgot-password-link"
-      // >
-        <button onClick={
-
-handleForgotPassword
-}
-id="forgot-password-button"
->
-
-Forgot Password
+      {props.mode == "login" && (
+        <button onClick={handleForgotPassword} id="forgot-password-button">
+          Forgot Password
         </button>
-      // {/* </Link> */}
-      }
-      <Button buttonText={props.formType} 
-      />
-      {props.login && 
-      <Link
-      to="/signup"
-      >
-      Sign up
-      </Link>
-      }
-
-      {props.signup && (
+      )}
+      <button className="main" onClick={handleSubmit}>
+        {" "}
+        {props.formType}
+      </button>
+      {props.mode == "login" && <Link to="/signup">Sign up</Link>}
+      {props.mode == "signup" && (
         <p id="already-have-account-p">
           Already have an account?
           <Link to="/login">
