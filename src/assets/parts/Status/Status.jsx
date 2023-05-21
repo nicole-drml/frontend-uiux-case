@@ -3,11 +3,34 @@ import "./Status.scss";
 import { BiSignal4 } from "react-icons/bi";
 import { IoIosWifi } from "react-icons/io";
 import { BsBatteryFull } from "react-icons/bs";
+import { useEffect, useState } from "react";
 
 const Status = () => {
+  const [currentTime, setCurrentTime] = useState('')
+
+  useEffect(() => {
+    
+    function updateMilitaryTime() {
+      const currentTime = new Date();
+      const hours = currentTime.getHours().toString().padStart(2, '0');
+      const minutes = currentTime.getMinutes().toString();
+      // const seconds = currentTime.getSeconds().toString().padStart(2, '0');
+      const militaryTime = `${hours}:${minutes}`;
+    
+      setCurrentTime(militaryTime);
+    }
+    updateMilitaryTime();
+
+    const interval = setInterval(updateMilitaryTime, 60000);
+    
+    return() => {
+      clearInterval(interval)
+    }
+  }, [])
+
   return (
     <div id="status-container">
-      <span id="status-time">19:2</span>
+      <span id="status-time">{currentTime}</span>
       <div id="status-symbols-container">
         <BiSignal4 className="icon"/>
         <IoIosWifi className="icon" id="wifi-icon" />
