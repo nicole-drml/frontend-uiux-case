@@ -146,10 +146,11 @@ const App = () => {
   ];
 
   const [favoritesArr, setFavoritesArr] = useState([]);
+  const [cartArr, setCartArr] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
   const [favoriteStatus, setFavoriteStatus] = useState({ favorited: false });
-  const [inCartStatus, setInCartStatus] = useState({ favorited: false });
+  const [inCartStatus, setInCartStatus] = useState({ carted: false });
 
   PRODUCTS.forEach((product) => {
     // const favoriteStatus = {'favorited': false};
@@ -167,7 +168,16 @@ const App = () => {
         <Route path="/signup" element={<SignUp />}></Route>
         <Route
           path="/home"
-          element={<Home PRODUCTS={PRODUCTS} filterIconsArr={filterIconsArr} />}
+          element={
+            <Home
+              PRODUCTS={PRODUCTS}
+              filterIconsArr={filterIconsArr}
+              cartArr={cartArr}
+              setCartArr={setCartArr}
+              // inCartStatus={inCartStatus}
+              // setInCartStatus={setInCartStatus}
+            />
+          }
         ></Route>
 
         <Route
@@ -177,10 +187,10 @@ const App = () => {
               PRODUCTS={PRODUCTS}
               favoritesArr={favoritesArr}
               setFavoritesArr={setFavoritesArr}
-              favoriteStatus={favoriteStatus}
-              setFavoriteStatus={setFavoriteStatus}
-              inCartStatus={inCartStatus}
-              setInCartStatus={setInCartStatus}
+              // favoriteStatus={favoriteStatus}
+              // setFavoriteStatus={setFavoriteStatus}
+              // inCartStatus={inCartStatus}
+              // setInCartStatus={setInCartStatus}
             />
           }
         ></Route>
@@ -189,7 +199,7 @@ const App = () => {
           path="/favorite"
           element={<Favorite PRODUCTS={PRODUCTS} />}
         ></Route>
-        <Route path="/cart" element={<Cart PRODUCTS={PRODUCTS} />}></Route>
+        <Route path="/cart" element={<Cart PRODUCTS={PRODUCTS} cartArr={cartArr} setCartArr={setCartArr} />}></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

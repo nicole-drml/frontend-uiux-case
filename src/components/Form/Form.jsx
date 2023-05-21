@@ -20,7 +20,6 @@ const Form = (props) => {
   });
 
   const handleForgotPassword = () => {
-    // Open the forgot password popup window
     window.open("https://www.google.com", "_blank");
   };
 
@@ -84,13 +83,8 @@ const Form = (props) => {
     setErrors(newErrors);
 
     if (isValid) {
-        setRedirect(true);
+      setRedirect(true);
     }
-
-    // if (redirect) {
-    //   navigate("/home");
-    // }
-
     console.log("newErrors", newErrors);
   };
 
@@ -102,10 +96,6 @@ const Form = (props) => {
 
   return (
     <div className="form-component-container">
-      {/* {redirect && (
-        <Redirect to="/main-page" />
-      ) } */}
-      {/* {errors && <span>{errors}</span>} */}
       {props.mode == "signup" && (
         <div className="input-with-info-container">
           <div className="input-with-label">
@@ -119,14 +109,7 @@ const Form = (props) => {
               value={FormData.username}
               onChange={handleChange}
             />
-            {/* <datalist id="names">
-              <option value="Nicole"></option>
-              <option value="Nikki"></option>
-              <option value="Nikkikins"></option>
-              <option value="Niks"></option>
-            </datalist> */}
           </div>
-          {/* <div className="input-icon"></div> */}
         </div>
       )}
       <div className="input-with-info-container">
@@ -140,7 +123,6 @@ const Form = (props) => {
             onChange={handleChange}
           />
         </div>
-        {/* {errors.email && <p>{errors.email}</p> } */}
       </div>
 
       <div className="input-with-info-container">

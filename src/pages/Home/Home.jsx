@@ -11,7 +11,15 @@ import { RiSearch2Line } from "react-icons/ri";
 import { BsCart2 } from "react-icons/bs";
 import Navbar from "../../assets/parts/Navbar/Navbar";
 
-const Home = ({ PRODUCTS, filterIconsArr }) => {
+const Home = ({ PRODUCTS, filterIconsArr, cartArr, setCartArr, 
+  // inCartStatus, setInCartStatus 
+}) => {
+
+  const handleAddToCart = (product) => {
+    setCartArr([...cartArr, product])
+    product.carted = true;
+    console.log('cart', product)
+  }
   return (
     <div id="home-page-container">
       <Status />
@@ -49,7 +57,9 @@ const Home = ({ PRODUCTS, filterIconsArr }) => {
                       src={product.main_image}
                     ></img>
                   </Link>
-                  <img className="shopping-bag-icon" src={shoppingBag}></img>
+                  <img className="shopping-bag-icon" src={shoppingBag}
+                  onClick={() => handleAddToCart(product)}
+                  ></img>
                 </div>
                 <span className="product-name">{product.name}</span> <br />
                 <span className="product-price">

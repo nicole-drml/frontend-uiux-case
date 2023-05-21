@@ -17,9 +17,9 @@ const Product = ({
   PRODUCTS,
   favoritesArr,
   setFavoritesArr,
-  favoriteStatus,
-  setFavoriteStatus,
-  inCartStatus,
+  // favoriteStatus,
+  // setFavoriteStatus,
+  // inCartStatus,
 }) => {
   const productId = useParams();
 
@@ -88,26 +88,16 @@ const Product = ({
   const toggleFavorite = () => {
     product.favorited = !product.favorited;
     setFavorite(!favorite);
-
-    console.log("favorite stat", favoriteStatus);
-    console.log("favoriteyproyyy", product);
-    console.log("fav fav arr", favoritesArr);
   };
 
   const deleteFavorite = () => {
     product.favorited = false;
     setFavorite(false);
-
-    console.log("unfavorite stat", favoriteStatus);
-    console.log("unfavoriteyproyyy", product);
   };
-
-  console.log("PRODUCTS", PRODUCTS);
-  console.log("FAV fav arr", favoritesArr);
-
   const addtoCart = () => {
     product.carted = true;
   };
+
   return (
     <div id="product-page-container">
       <Status />

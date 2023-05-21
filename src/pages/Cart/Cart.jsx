@@ -7,10 +7,10 @@ import Array from "../../components/Array";
 
 import { MdArrowForwardIos } from "react-icons/md";
 
-const Cart = (PRODUCTS) => {
+const Cart = (props) => {
   const productId = "";
 
-  const products = PRODUCTS.PRODUCTS;
+  const products = props.PRODUCTS;
 
   let product = products.find(
     (product) => product.product_id === productId.product_id
@@ -111,7 +111,7 @@ const Cart = (PRODUCTS) => {
     <div id="cart-page-container">
       <Array page="My cart" />
       <ul>
-        {cartedArr.map((carted) => {
+        {props.cartArr.map((carted) => {
           return (
             <Link to={`/product/${carted.product_id}`} key={carted.name}>
               <li key={carted.name}>
