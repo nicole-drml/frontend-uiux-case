@@ -1,4 +1,12 @@
+@import "../../assets/scss/styles";
+
 #login-page-container {
+  #login-h3 {
+    width: 100%;
+    left: 0;
+    top: 15%;
+    padding: 0 auto;
+  }
   #login-form-container {
     height: 40%;
     .form-component-container {
@@ -6,16 +14,22 @@
 
       .input-with-info-container {
         height: 15%;
-
       }
 
-      #forgot-password-link {
-        margin-top: 25px;
-    }
-
-    button.main {
+      button.main {
         margin-top: 0px;
-    }
+      }
+
+      #forgot-password-button {
+        color: $black-text-thin;
+        background-color: $white;
+        border: none;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1em;
+        margin-top: 10px;
+        height: 10%;
+        // background-color: red;
+      }
     }
   }
 }

@@ -12,7 +12,7 @@ const LogIn = () => {
         </div>
         <div className="logo-right-line"></div>
       </div>
-      <h3>WELCOME</h3>
+      <h3 id="login-h3" ><span>Hello!</span><br/> WELCOME BACK</h3>
       <div id="login-form-container" className="forms-container">
         <Form formType="Log In" signup={false} login={true} />
       </div>

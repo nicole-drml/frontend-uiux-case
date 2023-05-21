@@ -5,6 +5,12 @@ import "./Form.scss";
 const Form = (props) => {
   console.log("props.login", props.login);
 
+
+  const handleForgotPassword = () => {
+    // Open the forgot password popup window
+    window.open('https://www.google.com', '_blank');
+  };
+
   return (
     <div className="form-component-container">
       {props.signup && (
@@ -45,12 +51,20 @@ const Form = (props) => {
         </div>
       )}
          {props.login && 
-      <Link
-      to="/forgot-password"
-      id="forgot-password-link"
-      >
-      Forgot Password
-      </Link>
+      // <Link
+      // to="/forgot-password"
+      // id="forgot-password-link"
+      // >
+        <button onClick={
+
+handleForgotPassword
+}
+id="forgot-password-button"
+>
+
+Forgot Password
+        </button>
+      // {/* </Link> */}
       }
       <Button buttonText={props.formType} 
       />
