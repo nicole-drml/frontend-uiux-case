@@ -7,6 +7,7 @@
   #status-container {
     background-color: $white;
   }
+
   #filter-ul {
     list-style-type: none;
     display: flex;
@@ -17,15 +18,18 @@
     margin-right: auto;
     margin-bottom: 0%;
     margin-top: 30%;
+
     li {
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: start;
       align-items: center;
+
       .icon-image-container {
         width: 35px;
       }
+
       img {
         width: 30px;
         border-radius: 12px;
@@ -33,6 +37,7 @@
         padding: 0.5em;
         background-color: rgba(245, 245, 245, 1);
       }
+
       span {
         font-size: 0.85em;
         color: $lighter-grey;
@@ -45,6 +50,7 @@
     height: 70vh;
     overflow-y: scroll;
     overflow-x: scroll;
+
     ul {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -61,6 +67,7 @@
           display: flex;
           overflow: hidden;
           cursor: pointer;
+
           .product-main-image {
             height: 210px;
             max-width: 100%;
@@ -68,6 +75,7 @@
             object-fit: cover;
             border-radius: 10px;
           }
+
           .shopping-bag-icon {
             position: absolute;
             bottom: 7.5%;
@@ -77,13 +85,16 @@
             border-radius: 4px;
           }
         }
+
         span {
           font-size: 0.9em;
           padding-left: 1px;
         }
+
         .product-name {
           color: $lighter-grey;
         }
+
         .product-price {
           font-weight: 600;
         }
@@ -93,7 +104,6 @@
 
   #home-top-options-container {
     margin-top: 8%;
-
     list-style-type: none;
     display: flex;
     justify-content: center;
@@ -110,6 +120,7 @@
       text-align: center;
       font-family: "Inter", sans-serif;
       font-size: 0.85em;
+
       span {
         font-size: 1.3em;
         font-weight: 700;
@@ -118,6 +129,7 @@
 
     .home-top-icons {
       font-size: 1.55em;
+
       a {
         text-decoration: none;
       }

@@ -28,7 +28,7 @@ const Favorite = (PRODUCTS) => {
             <p className="array-page-title">Favorites</p>
           </div>
         </div>
-        <ul className="products-in-favorite">
+        <ul id="products-in-favorite" className="products-array-container">
           {favoritesArr.map((favorites) => {
             return (
               <Link to={`/product/${favorites.product_id}`}>

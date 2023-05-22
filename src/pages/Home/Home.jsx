@@ -1,10 +1,8 @@
 import "./Home.scss";
 
 import shoppingBag from "../../assets/images/shopping-bag-icon.png";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import Product from "../Product";
 import Status from "../../assets/parts/Status";
 
 import { RiSearch2Line } from "react-icons/ri";
@@ -12,7 +10,6 @@ import { BsCart2 } from "react-icons/bs";
 import Navbar from "../../assets/parts/Navbar/Navbar";
 
 const Home = ({ PRODUCTS, filterIconsArr, cartArr, setCartArr, 
-  // inCartStatus, setInCartStatus 
 }) => {
 
   const handleAddToCart = (product) => {

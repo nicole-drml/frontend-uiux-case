@@ -121,7 +121,7 @@ const Cart = (props) => {
           <p className="array-page-title">Cart</p>
         </div>
       </div>
-      <ul className="products-in-cart-and-favorite">
+      <ul id="products-in-cart" className="products-array-container" >
         {props.cartArr.map((carted) => {
           return (
             <Link to={`/product/${carted.product_id}`} key={carted.name}>

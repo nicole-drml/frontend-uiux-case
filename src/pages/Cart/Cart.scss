@@ -2,16 +2,14 @@
 @import "../../assets/scss/mixins";
 
 #cart-page-container {
-  margin-top: 23%;
+  margin-top: 18%;
   width: 100vw;
-  height: 65vh;
+  height: 68.7vh;
   overflow-y: scroll;
   overflow-x: scroll;
-  // position: relative;
   .cart-bottom-logic-container {
     position: absolute;
     bottom: 0;
-    // background-color: yellow;
     background-color: $white;
     width: 100vw;
     height: 25%;
@@ -21,7 +19,7 @@
 
     #invalid-code-h1 {
       color: $light-red;
-      font-size: .85em;
+      font-size: 0.85em;
       height: 10%;
       width: 100%;
       position: absolute;
@@ -70,17 +68,14 @@
       }
     }
   }
-
 }
 
 #not-yet-discounted-div {
   display: flex;
   align-items: center;
   background-color: rgb(135, 116, 91);
-  // position: sticky;
   width: 100%;
   margin-bottom: 5%;
-  // bottom: 85%;
   z-index: 10;
 
   input {
@@ -108,13 +103,6 @@
   }
 }
 
-.products-in-cart {
-  // background-color: yellow;
-  margin-top: 20%;
-  margin-bottom: 90%;
-  width: 100%;
-  height: 500px;
-  position: absolute;
-  overflow-x: scroll;
-  overflow-y: scroll;
+.products-array-container {
+  padding: 5% 10%;
 }
