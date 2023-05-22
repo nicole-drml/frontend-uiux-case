@@ -8,6 +8,7 @@ import Array from "../../components/Array";
 
 import { MdArrowForwardIos } from "react-icons/md";
 import { MdArrowBackIos } from "react-icons/md";
+import { SlClose } from "react-icons/sl";
 
 const Cart = (props) => {
   const productId = "";
@@ -121,19 +122,25 @@ const Cart = (props) => {
           <p className="array-page-title">Cart</p>
         </div>
       </div>
-      <ul id="products-in-cart" className="products-array-container" >
+      <ul id="products-in-cart" className="products-array-container">
         {props.cartArr.map((carted) => {
           return (
-            <Link to={`/product/${carted.product_id}`} key={carted.name}>
-              <li key={carted.name}>
+            <li key={carted.name}>
+              <Link to={`/product/${carted.product_id}`} key={carted.name}>
                 <img
                   className="favorite-product-image"
                   src={carted.main_image}
                 ></img>
-                <span>{carted.name}</span>
-                <span className="product-price">
-                  $ {carted.price.toFixed(2)}
-                </span>
+              </Link>
+              <div className="li-product-center-info">
+                {" "}
+                <Link to={`/product/${carted.product_id}`} key={carted.name}>
+                  <span className="product-name">{carted.name}</span>
+                  <br />
+                  <span className="product-price">
+                    $ {carted.price.toFixed(2)}
+                  </span>
+                </Link>
                 <div className="quantity-add-to-cart-container">
                   <button
                     className={`increase-quantity-btn ${
@@ -153,8 +160,11 @@ const Cart = (props) => {
                     -
                   </button>
                 </div>
-              </li>
-            </Link>
+              </div>
+                <div className="li-product-icons-container">
+                  <SlClose />
+                </div>
+            </li>
           );
         })}
       </ul>

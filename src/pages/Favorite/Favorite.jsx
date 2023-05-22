@@ -1,5 +1,7 @@
 import Status from "../../assets/parts/Status";
 import { MdArrowBackIos } from "react-icons/md";
+import { SlClose } from "react-icons/sl";
+
 import "./Favorite.scss";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -22,27 +24,34 @@ const Favorite = (PRODUCTS) => {
         <div className="array-pages-container">
           <Status />
           <div className="array-title-and-button">
-            <Link to="/home">
-              <MdArrowBackIos />
-            </Link>
             <p className="array-page-title">Favorites</p>
           </div>
         </div>
         <ul id="products-in-favorite" className="products-array-container">
           {favoritesArr.map((favorites) => {
             return (
-              <Link to={`/product/${favorites.product_id}`}>
-                <li key={favorites.name}>
+              <li key={favorites.name}>
+                <Link to={`/product/${favorites.product_id}`}>
                   <img
                     className="favorite-product-image"
                     src={favorites.main_image}
                   ></img>
-                  <span>{favorites.name}</span>
-                  <span className="product-price">
-                    $ {favorites.price.toFixed(2)}
-                  </span>
-                </li>
-              </Link>
+                </Link>
+
+                <Link to={`/product/${favorites.product_id}`}>
+
+                  <div className="li-product-center-info">
+                    <span className="product-name">{favorites.name}</span>
+                    <br />
+                    <span className="product-price">
+                      $ {favorites.price.toFixed(2)}
+                    </span>
+                  </div>
+                </Link>
+                <div className="li-product-icons-container">
+                  <SlClose />
+                </div>
+              </li>
             );
           })}
         </ul>
