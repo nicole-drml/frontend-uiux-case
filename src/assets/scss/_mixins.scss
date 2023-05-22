@@ -77,8 +77,14 @@
     }
     .li-product-icons-container {
       position: absolute;
-      right: 0;
+      right: 5%;
+      top: 15%;
       height: 100%;
+
+      svg {
+        // font-weight: 600;
+        font-size: 1.2em;
+      }
     }
   }
 }
