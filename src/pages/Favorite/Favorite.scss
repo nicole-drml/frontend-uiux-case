@@ -1,0 +1,36 @@
+#favorite-page-page {
+  #add-all-to-cart-container {
+  background-color: aqua;
+  margin-top: 80%;
+  height: 400px;
+    z-index: 9;
+
+  }
+
+}
+
+
+    button#add-all-to-cart {
+      display: block;
+      width: 80%;
+      border-radius: 8px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+#favorite-page-container {
+  margin-top: 23%;
+  width: 100vw;
+  height: 68vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+//   background-color: green;
+  margin-bottom: 3%;
+  .products-in-favorite {
+    // position: absolute;
+    width: 100vw;
+    height: 70vh;
+    // overflow-y: scroll;
+    // overflow-x: scroll;
+    // background-color: orange;
+  }
+}

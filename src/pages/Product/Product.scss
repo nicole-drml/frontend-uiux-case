@@ -1,3 +1,5 @@
+@import "../../assets/scss/styles";
+
 #product-page-container {
   .product-favorite-icon {
     background-color: red;
@@ -108,11 +110,11 @@
         font-weight: 600;
       }
       #review-count-span {
-        color: rgba(144, 144, 144, 1);
+        color: $lighter-grey;
       }
     }
     #product-description {
-      color: rgba(144, 144, 144, 1);
+      color: $lighter-grey;
       font-size: 0.9em;
       line-height: 20px;
       // margin-bottom: 20px;

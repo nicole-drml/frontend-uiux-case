@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect, useReducer, useState } from "react";
 
 import "./Navbar.scss"
 import { HiHome } from "react-icons/hi";
@@ -7,6 +8,13 @@ import { FiBell } from "react-icons/fi";
 import { RxPerson } from "react-icons/rx";
 
 const Navbar = () => {
+
+  const [activePage, setActivePage] = useState([
+    'home',
+    'favorite',
+    'notifications',
+    'cart'
+  ])
   return (
     <div id="navbar-component-container">
         <div id="links-container">

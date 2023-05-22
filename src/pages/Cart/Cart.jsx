@@ -1,4 +1,5 @@
 import "./Cart.scss";
+import Status from "../../assets/parts/Status";
 
 import { useEffect, useState, useReducer } from "react";
 import { useParams, Link } from "react-router-dom";
@@ -6,6 +7,7 @@ import Navbar from "../../assets/parts/Navbar/Navbar";
 import Array from "../../components/Array";
 
 import { MdArrowForwardIos } from "react-icons/md";
+import { MdArrowBackIos } from "react-icons/md";
 
 const Cart = (props) => {
   const productId = "";
@@ -71,7 +73,7 @@ const Cart = (props) => {
 
   const handleInputChange = (event) => {
     setPromoCode(event.target.value);
-    setcodeInvalid(false)
+    setcodeInvalid(false);
   };
 
   //   let discountPercentage = 0;
@@ -91,7 +93,6 @@ const Cart = (props) => {
     }
   };
 
-  console.log("validity", codeInvalid);
   useEffect(() => {
     console.log("discountPercentage", discountPercentage);
 
@@ -110,8 +111,17 @@ const Cart = (props) => {
 
   return (
     <div id="cart-page-container">
-      <Array page="My cart" />
-      <ul>
+      <div className="array-pages-container">
+        <Status />
+
+        <div className="array-title-and-button">
+          <Link to="/home">
+            <MdArrowBackIos />
+          </Link>
+          <p className="array-page-title">Cart</p>
+        </div>
+      </div>
+      <ul className="products-in-cart-and-favorite">
         {props.cartArr.map((carted) => {
           return (
             <Link to={`/product/${carted.product_id}`} key={carted.name}>
@@ -150,22 +160,22 @@ const Cart = (props) => {
       </ul>
 
       <div className="cart-bottom-logic-container">
-      {discounted ? (
-        <div className="discounted-div">
-          <h3>Congrats! You saved {discountPercentage}%</h3>
-        </div>
-      ) : (
-        <div id="not-yet-discounted-div">
-          <input
-            type="text"
-            placeholder="Enter your promo code"
-            value={promoCode}
-            onChange={handleInputChange}
-          />
-          <MdArrowForwardIos onClick={enterPromoCode} />
-        </div>
-      )}
-      {codeInvalid && <h1 id="invalid-code-h1" >invalid code</h1>}
+        {discounted ? (
+          <div className="discounted-div">
+            <h3>Congrats! You saved {discountPercentage}%</h3>
+          </div>
+        ) : (
+          <div id="not-yet-discounted-div">
+            <input
+              type="text"
+              placeholder="Enter your promo code"
+              value={promoCode}
+              onChange={handleInputChange}
+            />
+            <MdArrowForwardIos onClick={enterPromoCode} />
+          </div>
+        )}
+        {codeInvalid && <h1 id="invalid-code-h1">invalid code</h1>}
         <div className="total-container">
           <span className="total-label-span">Total</span>
           <span className="total-span">$ {cartTotal.toFixed(2)}</span>
@@ -173,9 +183,8 @@ const Cart = (props) => {
         <button className="main-button">
           <span>Checkout</span>{" "}
         </button>
+        <div className="indicator"></div>
       </div>
-      <div className="indicator"></div>
-
     </div>
   );
 };

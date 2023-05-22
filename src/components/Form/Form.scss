@@ -36,7 +36,7 @@
       label {
         padding: 5px;
         font-size: 0.8em;
-        color: rgba(144, 144, 144, 1);
+        color: $lighter-grey;
       }
 
       input {
@@ -67,8 +67,11 @@
   }
 
   #already-have-account-p {
-    color: rgba(144, 144, 144, 1);
+    color: $lighter-grey;
     font-size: 0.85em;
+  }
+  #login-button-submit {
+    
   }
 }
 
